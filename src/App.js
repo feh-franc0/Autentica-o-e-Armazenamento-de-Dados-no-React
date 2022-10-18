@@ -1,7 +1,12 @@
+import { AuthProvider } from "./context/authContext";
 import { Signup } from "./pages/Sininup";
 
 function App() {
-  return <Signup />
+  return (
+    <AuthProvider>
+      <Signup />
+    </AuthProvider>
+  )
 }
 
 export default App;
