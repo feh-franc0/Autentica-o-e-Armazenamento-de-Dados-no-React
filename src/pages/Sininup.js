@@ -7,14 +7,30 @@ export const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  function handleSubmit(element) {
+  async function handleSubmit(element) {
     element.preventDefault();
+
+    if (password.length > 6) {
+      alert("Password deve ter no minimo 6 caracteres");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert("As senhas não conferem");
+      return;
+    }
+
+    try {
+      await signUp(email, password)
+    } catch (error) {
+      alert("Ocorreu um erro ao tentar criar o usuário");
+    }
   }
 
   return (
     <div className="container">
       <h2>Signup</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Email</label>
         <input
           type="email"
@@ -34,7 +50,7 @@ export const Signup = () => {
           onChange={(element) => setConfirmPassword(element.target.value)}
         />
 
-        <button onClick={handleSubmit} className="button-block" type="submit">
+        <button className="button-block" type="submit">
           Signup
         </button>
       </form>
