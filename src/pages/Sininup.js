@@ -29,7 +29,7 @@ export const Signup = () => {
 
   return (
     <div className="container">
-      <h2>Signup</h2>
+      <h2>Cadastro de usuário</h2>
       <form onSubmit={handleSubmit}>
         <label>Email</label>
         <input
