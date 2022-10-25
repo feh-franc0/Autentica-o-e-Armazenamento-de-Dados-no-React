@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 
 export const Login = () => {
@@ -52,6 +52,17 @@ export const Login = () => {
           Login
         </button>
       </form>
+
+      <div className="center">
+        <div>
+          <p>
+            Forgot Password ? <Link to="/forgot-password">Reset Password</Link>
+          </p>
+          <p>
+            Need a new account ? <Link to="/signup">Sign Up</Link>
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
