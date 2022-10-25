@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./context/authContext";
+import { ForgotPassword } from "./pages/ForgotPassword";
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Sininup";
 import { UpdateProfile } from "./pages/UpdateProfile";
@@ -14,6 +15,7 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/" element={<UserProfile />}></Route>
           <Route path="/update-profile" element={<UpdateProfile />}></Route>
+          <Route path="/forgot-password" element={<ForgotPassword />}></Route>
           <Route
             path="*"
             element={
